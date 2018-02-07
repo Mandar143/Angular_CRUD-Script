@@ -1,0 +1,48 @@
+<div class="container">
+  <div class="row">
+      <div class="col-md-12">
+          <div class="row">
+            <div class="col-md-6">
+              <form>
+              <label class="control-label">Name</label>
+              <input type="text" class="form-control" name="name" #name value="{{nm}}">
+              <label class="control-label">Title</label>
+              <input type="text" class="form-control" name="title" #title value="{{tit}}">
+              <label class="control-label">Description</label>
+              <input type="text" class="form-control" name="desc" #desc value="{{de}}">
+              <input type="hidden" class="form-control" name="_id" #id value="{{_id1}}">
+              <button class="btn btn-primary" (click)="onSubmit(name.value,title.value,desc.value)">
+                  submit
+              </button>
+              <button class="btn btn-primary" (click)="onEdit(name.value,title.value,desc.value,id.value)">
+                  Edit
+              </button>
+              <button class="btn btn-primary" (click)="onDelete(id.value)">
+                  Delete
+              </button>
+              <p>{{resMsg}}</p>
+            </form>
+            </div>
+            <div class="col-md-6">
+              <div class="table-responsive">
+                <table class="table table-stripped">
+                  <tr>
+                    <th>Name</th>
+                    <th>Title</th>
+                    <th>Desc</th>
+                  </tr>
+                  <tr *ngFor="let state of states" (click)="onSelect1(state._id)" style="cursor:pointer">
+                      <td>{{state.name}}</td>
+                      <td>{{state.title}}</td>
+                      <td>{{state.desc}}</td>
+                  </tr>
+
+                </table>
+              </div>
+            </div>
+            
+          </div>
+          
+      </div>
+  </div>
+</div>

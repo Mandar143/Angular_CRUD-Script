@@ -1,0 +1,48 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <form class="form-horizonatal" #frm="ngForm" (ngSubmit)="onSubmit(frm.value)">
+        <input type="hidden" name="key"  #key="ngModel" ngModel />
+        <input type="hidden" name="hash" #hash="ngModel" ngModel value="{{hash}}"/>
+        <input type="hidden" name="txnid" #txnid="ngModel" ngModel value="{{txnid}}" />
+        <table>
+          <tr>
+            <td><b>Mandatory Parameters</b></td>
+          </tr>
+          <tr>
+            <td>Amount <span class="mand">*</span>: </td>
+            <td><input 
+              name="amount" 
+              type="number" 
+              #amt="ngModel" 
+              ngModel 
+              required></td>
+            <td>First Name <span class="mand">*</span>: </td>
+            <td><input type="text" name="firstname"   #firstname="ngModel" ngModel ></td>
+          </tr>
+          <tr>
+            <td>Email <span class="mand">*</span>: </td>
+            <td><input type="email" name="email"  #email="ngModel" ngModel ></td>
+            <td>Phone <span class="mand">*</span>: </td>
+            <td><input type="text" name="phone" #phone="ngModel" ngModel ></td>
+          </tr>
+          <tr>
+            <td>Product Info <span class="mand">*</span>: </td>
+            <td colspan="3"><textarea name="productinfo" #productinfo="ngModel" ngModel></textarea></td>
+          </tr>
+          
+  
+          <tr>
+            <td colspan="3"><input type="hidden" name="serVprovider" #serVprovider="ngModel" ngModel size="64" /></td>
+          </tr>
+  
+             <tr>
+              <td colspan="4"><input type="submit" value="Submit" /></td>
+            
+          </tr>
+        </table>
+      </form>
+    </div>
+  </div>
+</div>
+
